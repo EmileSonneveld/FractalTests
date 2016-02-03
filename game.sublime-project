@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		// Add to pref>user, couse it doesn't work here
+		"file_exclude_patterns": ["*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", 
+		"*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
+		".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
+		"*.meta", "-tk2d.asset"]
+	}
+}
