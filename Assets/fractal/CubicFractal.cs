@@ -10,6 +10,7 @@ public class CubicFractal : MonoBehaviour
         XPos, YPos, ZPos,
         XNeg, YNeg, ZNeg
     }
+
     Dictionary<SignedDimentions, Vector3> DimMap = new Dictionary<SignedDimentions, Vector3>()
     {
         { SignedDimentions.None, Vector3.zero},
@@ -26,13 +27,12 @@ public class CubicFractal : MonoBehaviour
     void Start()
     {
         RecursePlaceCube(0, this.transform, SignedDimentions.None);
-        GetComponent<MeshRenderer>().enabled = false;
+        // GetComponent<MeshRenderer>().enabled = false;
     }
 
     void Update()
     {
     }
-
 
     public float scale = 0.6f;
     public int itterations = 4;
@@ -42,7 +42,7 @@ public class CubicFractal : MonoBehaviour
         var inst = Instantiate(cube);
         inst.transform.parent = prevTrans;
         inst.transform.localScale = Vector3.one * scale;
-        inst.transform.localPosition = DimMap[dir]/2; // + new Vector3(0,  prevTrans.transform.localScale.y/2, 0); // inst.transform.localScale.y/2 +
+        inst.transform.localPosition = DimMap[dir] / 2; // + new Vector3(0,  prevTrans.transform.localScale.y/2, 0); // inst.transform.localScale.y/2 +
 
         itteration++;
         if (itteration > itterations)
@@ -61,7 +61,6 @@ public class CubicFractal : MonoBehaviour
         //RecursePlaceCube(itteration, inst.transform, -inst.transform.localScale.x * scale * Vector3.left);
         //RecursePlaceCube(itteration, inst.transform, -inst.transform.localScale.y * scale * Vector3.up);
         //RecursePlaceCube(itteration, inst.transform, -inst.transform.localScale.z * scale * Vector3.forward);
-
 
     }
 }
